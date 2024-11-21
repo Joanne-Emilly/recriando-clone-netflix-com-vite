@@ -1,10 +1,7 @@
 import './App.css';
 
 function App() {
-  const aspas = 'bvksbvkeff';
-
-  console.log(aspas);
-  return <>TEST</>;
+  return <>Estrutura Inicial do Projeto</>;
 }
 
 export default App;
