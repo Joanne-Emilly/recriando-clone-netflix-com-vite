@@ -61,5 +61,3 @@ const getHomeList = async () => {
 };
 
 export default { basicFetch, getHomeList };
-
-///popular?api_key=f095f5543e13ce1bd3313506e7969dc1&language=pt-BR
