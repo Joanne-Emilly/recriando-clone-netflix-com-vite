@@ -13,7 +13,7 @@ const App = () => {
   }, []);
   return (
     <div className="App">
-      <h1>Estrutura Inicial do Projeto</h1>
+      <h1>Página Inicial do Projeto</h1>
     </div>
   );
 };
