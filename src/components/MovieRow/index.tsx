@@ -1,3 +1,5 @@
+import React from 'react';
+import StyleMovieRow from './styles';
 export interface MovieListProps {
   title: string;
   items: {
@@ -6,7 +8,7 @@ export interface MovieListProps {
 }
 const MovieList: React.FC<MovieListProps> = ({ items, title }) => {
   return (
-    <div className="movieList">
+    <StyleMovieRow className="movieList">
       <h2>{title}</h2>
       <div className="movieListArea">
         <div className="movieList">
@@ -21,7 +23,7 @@ const MovieList: React.FC<MovieListProps> = ({ items, title }) => {
             ))}
         </div>
       </div>
-    </div>
+    </StyleMovieRow>
   );
 };
 
