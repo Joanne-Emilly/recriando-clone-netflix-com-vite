@@ -8,9 +8,11 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 62.5%;
   }
   body {
-    background-color: #fff;
+    background-color: #111;
     font-family: "Blinker", serif;
     color: #fff;
-
+    margin: 0;
   }
+
+
 `;
