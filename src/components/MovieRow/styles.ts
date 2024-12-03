@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyleMovieRow = styled.div`
+export const ContainerMovieRow = styled.div`
   margin-bottom: 30px;
   ///Retirar para fazer o carrosel
   width: 999999999999999999px;
@@ -30,5 +30,3 @@ const StyleMovieRow = styled.div`
     transform: scale(1.5);
   }
 `;
-
-export default StyleMovieRow;

@@ -1,5 +1,5 @@
 import React from 'react';
-import StyleMovieRow from './styles';
+import { ContainerMovieRow } from './styles';
 export interface MovieListProps {
   title: string;
   items: {
@@ -8,7 +8,7 @@ export interface MovieListProps {
 }
 const MovieList: React.FC<MovieListProps> = ({ items, title }) => {
   return (
-    <StyleMovieRow className="movieList">
+    <ContainerMovieRow>
       <h2>{title}</h2>
       <div className="movieListArea">
         <div className="movieList">
@@ -23,7 +23,7 @@ const MovieList: React.FC<MovieListProps> = ({ items, title }) => {
             ))}
         </div>
       </div>
-    </StyleMovieRow>
+    </ContainerMovieRow>
   );
 };
 
