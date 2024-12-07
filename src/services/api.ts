@@ -11,7 +11,7 @@ const basicFetch = async (endpoint: string) => {
     }
     return response.data;
   } catch (error) {
-    console.log('Erro ao carregar os dados da API', error);
+    console.error('Erro ao carregar os dados da API:', error);
     return null;
   }
 };
@@ -63,4 +63,22 @@ const getHomeList = async () => {
   ];
 };
 
-export default { basicFetch, getHomeList };
+const getMovieInfo = async (movieId: string | number, type: string) => {
+  let info = null;
+
+  if (movieId) {
+    switch (type) {
+      case 'movie':
+        info = await basicFetch(`/movie/${movieId}?language=pt-BR&api_key=${API_KEY}`);
+        break;
+      case 'tv':
+        info = await basicFetch(`/tv/${movieId}?language=pt-BR&api_key=${API_KEY}`);
+        break;
+      default:
+        console.warn('Tipo inválido fornecido para getMovieInfo.');
+    }
+  }
+  return info;
+};
+
+export default { basicFetch, getHomeList, getMovieInfo };
