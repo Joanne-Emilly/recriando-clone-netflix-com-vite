@@ -6,6 +6,7 @@ export interface FeaturedProps {
   backdrop_path: string;
   items: {
     results: {
+      id: number;
       backdrop_path: string;
       original_name: string;
       vote_average: number;
@@ -22,7 +23,7 @@ const Featured: React.FC<FeaturedProps> = ({ backdrop_path, items }) => {
   const firstItem = items.results[0];
 
   if (!firstItem) {
-    return null; 
+    return null;
   }
 
   const firstDate = new Date(firstItem.first_air_date);
@@ -40,7 +41,19 @@ const Featured: React.FC<FeaturedProps> = ({ backdrop_path, items }) => {
             <div className="featured--seasons">
               {firstItem.number_of_seasons} Temporada{firstItem.number_of_seasons > 1 ? 's' : ''}
             </div>
-            <div className="featured--description">{firstItem.overview}</div>
+          </div>
+          <div className="featured--description">{firstItem.overview}</div>
+
+          <div className="featured--buttons">
+            <a className="featured--watchbutton" href={`/watch${firstItem.id}`}>
+              ▶ Assitir
+            </a>
+            <a className="featured--mylistbutton" href={`/list/add${firstItem.id}`}>
+              + Minha lista
+            </a>
+          </div>
+          <div className="featured--genres">
+            <strong>Gêneros: {genres.split('')} </strong>
           </div>
         </div>
       </div>

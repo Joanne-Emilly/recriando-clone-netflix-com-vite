@@ -38,6 +38,7 @@ const App = () => {
                   number_of_seasons: chosenInfo.number_of_seasons,
                   overview: chosenInfo.overview,
                   genres: chosenInfo.genres,
+                  id: 0
                 },
               ],
             },
