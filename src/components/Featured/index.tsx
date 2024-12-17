@@ -2,6 +2,7 @@ import React from 'react';
 import ContainerFeatured from './styles';
 
 export interface FeaturedProps {
+  title: any;
   backdrop_path: string;
   items: {
     results: {
@@ -21,7 +22,7 @@ const Featured: React.FC<FeaturedProps> = ({ backdrop_path, items }) => {
   const firstItem = items.results[0];
 
   if (!firstItem) {
-    return null; // Caso não haja nenhum item, retorna nulo
+    return null; 
   }
 
   const firstDate = new Date(firstItem.first_air_date);

@@ -14,6 +14,11 @@ const ContainerFeatured = styled.div<ContainerFeaturedProps>`
     width: 100%;
     height: 100vh;
     background: linear-gradient(to top, #111 10%, transparent 90%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 3rem;
+    padding-top: 7rem;
   }
   .featured--vertical {
     width: 100%;

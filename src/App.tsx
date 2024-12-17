@@ -3,10 +3,12 @@ import api from './services/api';
 import MovieList, { MovieListProps } from './components/MovieRow';
 import Container from './app.styles';
 import Featured, { FeaturedProps } from './components/Featured/index';
+import Header from './components/Header';
 
 const App = () => {
   const [movieList, setMovieList] = useState<MovieListProps[]>([]);
   const [featuredData, setFeaturedData] = useState<FeaturedProps | null>(null);
+  const [blackHeader, setBlackHeader] = useState<boolean>(false);
 
   useEffect(() => {
     const loadAll = async () => {
@@ -47,8 +49,23 @@ const App = () => {
     loadAll();
   }, []);
 
+  useEffect(() => {
+    const scrollListener = () => {
+      if (window.scrollY > 10) {
+        setBlackHeader(true);
+      } else {
+        setBlackHeader(false);
+      }
+    };
+    window.addEventListener('scroll', scrollListener);
+    return () => {
+      window.removeEventListener('scroll', scrollListener);
+    };
+  }, []);
+
   return (
     <Container>
+      <Header blackHeader={blackHeader} />
       {/* Componente do filme em destaque */}
       {featuredData && (
         <Featured

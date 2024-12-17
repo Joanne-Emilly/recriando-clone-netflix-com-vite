@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const ContainerMovieRow = styled.div`
-  margin-bottom: 30px;
+  padding-left: 3rem;
+
   ///Retirar para fazer o carrosel
   width: 999999999999999999px;
   h2 {
@@ -11,7 +12,7 @@ export const ContainerMovieRow = styled.div`
 
   .movieListArea {
     overflow: hidden;
-    padding-left: 30px;
+    padding-left: 3rem;
   }
 
   .movieListItem {
