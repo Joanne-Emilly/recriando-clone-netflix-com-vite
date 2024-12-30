@@ -78,7 +78,7 @@ const App = () => {
 
       {/* Listas de categorias e filmes */}
       {movieList.map((item, key) => (
-        <MovieList key={key} title={item.title} items={item.items} />
+        <MovieList  key={key} title={item.title} items={item.items} />
       ))}
     </Container>
   );
